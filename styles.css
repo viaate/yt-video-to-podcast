@@ -1,0 +1,55 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #1e5799, #2989d8);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#videoIframe {
+    display: none !important; /* Hide the video, using !important to override any other styles */
+}
+
+#audioPlayer {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#videoUrlInput {
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+}
+
+#loadVideoButton {
+    padding: 10px 20px;
+    background: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#loadVideoButton:hover {
+    background: #e67e22;
+}
