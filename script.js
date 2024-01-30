@@ -10,7 +10,7 @@ loadVideoButton.addEventListener('click', () => {
 
         if (videoId) {
             // Embed the YouTube video in the iframe
-            videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`; // Add `?autoplay=1` to auto-play the video
+            videoIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`; // Add `?autoplay=1` to auto-play the video
             videoIframe.style.display = 'block';
             audioPlayer.style.display = 'none';
         }
