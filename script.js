@@ -18,12 +18,24 @@ loadVideoButton.addEventListener('click', () => {
 
     if (videoId) {
         console.log(`Video ID extracted: ${videoId}`);
-        // Embed the YouTube video in the iframe
-        videoIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`; // Auto-play the video
+
+        // Embed the YouTube video in the iframe using the YouTube IFrame API
+        videoIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1`; // Auto-play the video
         videoIframe.style.display = 'block';
         audioPlayer.style.display = 'none';
         videoThumbnail.style.display = 'none'; // Hide the thumbnail
         console.log('YouTube video embedded successfully.');
+
+        // When the iframe is ready, cue the video to start playing
+        videoIframe.onload = () => {
+            new YT.Player(videoIframe, {
+                events: {
+                    'onReady': (event) => {
+                        event.target.playVideo();
+                    }
+                }
+            });
+        };
     } else {
         console.log('Invalid YouTube video URL.');
         videoThumbnail.style.display = 'block'; // Display the thumbnail
